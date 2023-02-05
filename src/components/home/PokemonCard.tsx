@@ -2,9 +2,15 @@ import { pokemon } from "@/assets";
 import Image from "next/image";
 import React, { FC } from "react";
 
-interface PokemonCardProps {}
+interface PokemonCardProps {
+    pokemon: {
+        image: string;
+        name: string;
+        url: string;
+    };
+}
 
-const PokemonCard: FC<PokemonCardProps> = (props) => {
+const PokemonCard: FC<PokemonCardProps> = ({ pokemon }) => {
     return (
         <div className="bg-white hover:bg-blue-500 hover:text-white p-2 rounded-md pokemon_card">
             {/* image  */}
@@ -14,12 +20,16 @@ const PokemonCard: FC<PokemonCardProps> = (props) => {
                 </p>
                 <Image
                     className="pokemon_image w-4/5"
-                    src={pokemon}
+                    src={pokemon?.image}
+                    width="100"
+                    height="100"
                     alt="Pokemon"
                 />
             </div>
             {/* pokemon name  */}
-            <h2 className="my-2 text-base font-medium">Pokemon name</h2>
+            <h2 className="my-2 text-base font-medium capitalize">
+                {pokemon?.name}
+            </h2>
             {/* button  */}
             <div>
                 <button
