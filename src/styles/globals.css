@@ -25,3 +25,19 @@ body {
 .pokemon_card:hover .pokemon_image {
     transform: scale(1.2);
 }
+.pokemon_details:hover .pokemon_image {
+    transform: scale(1.1);
+}
+
+@keyframes progressbarmove {
+    from {
+        width: 10%;
+    }
+    to {
+        width: 20rem;
+    }
+}
+
+.progress_bar_animation {
+    animation: 2s linear 1s running progressbarmove;
+}

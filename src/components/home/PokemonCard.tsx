@@ -4,7 +4,7 @@ import React, { FC } from "react";
 
 interface PokemonCardProps {}
 
-const PokemonCard: React.FC<PokemonCardProps> = (props) => {
+const PokemonCard: FC<PokemonCardProps> = (props) => {
     return (
         <div className="bg-white hover:bg-blue-500 hover:text-white p-2 rounded-md pokemon_card">
             {/* image  */}
