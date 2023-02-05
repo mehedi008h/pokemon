@@ -6,3 +6,22 @@
 body {
     font-family: "Ubuntu", sans-serif;
 }
+
+.pokemons_bg {
+    background-image: url(../assets/Background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.pokemon_card {
+    width: 235px;
+    height: 300px;
+    transition: all 0.3s ease-in-out;
+}
+.pokemon_image {
+    transition: all 0.3s ease-in-out;
+}
+
+.pokemon_card:hover .pokemon_image {
+    transform: scale(1.2);
+}
