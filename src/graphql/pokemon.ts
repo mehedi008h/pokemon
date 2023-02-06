@@ -9,9 +9,37 @@ export const GET_POKEMONS = gql`
             status
             message
             results {
+                id
                 url
                 name
                 image
+            }
+        }
+    }
+`;
+
+export const GET_POKEMON = gql`
+    query pokemon($name: String!) {
+        pokemon(name: $name) {
+            id
+            name
+            height
+            weight
+            abilities {
+                ability {
+                    name
+                }
+            }
+            stats {
+                base_stat
+                stat {
+                    name
+                }
+            }
+            types {
+                type {
+                    name
+                }
             }
         }
     }

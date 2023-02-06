@@ -6,6 +6,7 @@ import React, { Fragment } from "react";
 import PokemonCard from "./PokemonCard";
 
 interface Pokemon {
+    id: number;
     image: string;
     name: string;
     url: string;
