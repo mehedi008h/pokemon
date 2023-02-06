@@ -12,7 +12,7 @@ import React from "react";
 
 const Description = () => {
     return (
-        <div className="w-full h-screen flex justify-between gap-12">
+        <div className="w-full xl:min-h-screen lg:min-h-screen md:min-h-screen flex justify-between gap-12">
             {/* left  */}
             <div className="h-screen xl:flex lg:flex md:flex hidden">
                 <Image className="h-full" src={sideImage} alt="left" />
@@ -22,14 +22,14 @@ const Description = () => {
                 <div className="relative text-center flex justify-center">
                     <Image src={brush} alt="brush" />
                     <h1
-                        className="font-bold xl:text-5xl lg:text-5xl md:text-5xl text-2xl absolute top-5"
-                        style={{ color: "#257BC4", left: "30%" }}
+                        className="font-bold xl:text-5xl lg:text-5xl md:text-5xl text-2xl absolute top-5 left-"
+                        style={{ color: "#257BC4" }}
                     >
                         Ash & Pikachu Arrive in <br /> Pokémon Universe
                     </h1>
                 </div>
                 {/* description for web  */}
-                <div className="flex gap-2 w-full mt-16 ">
+                <div className="xl:flex lg:flex md:flex hidden gap-2 w-full mt-16 ">
                     {/* first half  */}
                     <div className="w-3/5 mb-12">
                         <div className="flex gap-2">
@@ -209,6 +209,64 @@ const Description = () => {
                             pharetra.
                         </p>
                     </div>
+                </div>
+                {/* description for mobile  */}
+                <div className="xl:hidden lg:hidden md:hidden flex flex-col gap-2 w-full mt-16 px-4 mb-8">
+                    <p className="text-xs text-justify font-semibold">
+                        Lorem ipsum dolor sit amet consectetur. Risus cursus
+                        nibh elementum ornare a aliquet ac. Feugiat scelerisque
+                        ultrices tempor facilisi tempus risus nunc. Proin quis
+                        morbi posuere nisl etiam scelerisque. Proin pretium
+                        gravida semper ut erat nisi. Pulvinar ac mattis porta
+                        amet et. Nisl urna non fames felis leo. Vitae pulvinar
+                        sed viverra sit pretium lorem elementum. Iaculis sit
+                        maecenas sodales mi convallis justo aliquam. Tincidunt
+                        semper ut ornare vivamus lectus.
+                    </p>
+                    <div className="flex gap-2">
+                        <div className="w-3/5 flex justify-end items-center gap-2">
+                            <Image
+                                className="w-24 h-24"
+                                src={image3}
+                                alt="image3"
+                            />
+                            <div className="flex flex-col gap-2">
+                                <Image
+                                    className="w-24 h-24"
+                                    src={image3}
+                                    alt="image3"
+                                />
+                                <Image
+                                    className="w-24 h-24"
+                                    src={image5}
+                                    alt="image1"
+                                />
+                            </div>
+                        </div>
+                        <div className="flex flex-col justify-start gap-2 mt-8">
+                            <Image
+                                className="w-24 h-24"
+                                src={image5}
+                                alt="image3"
+                            />
+                            <Image
+                                className="w-24 h-24"
+                                src={image1}
+                                alt="image1"
+                            />
+                        </div>
+                    </div>
+                    <p className="text-xs text-justify font-semibold">
+                        Lorem ipsum dolor sit amet consectetur. Risus cursus
+                        nibh elementum ornare a aliquet ac. Feugiat scelerisque
+                        ultrices tempor facilisi tempus risus nunc. Proin quis
+                        morbi posuere nisl etiam scelerisque. Proin pretium
+                        gravida semper ut erat nisi. Pulvinar ac mattis porta
+                        amet et. Nisl urna non fames felis leo. Vitae pulvinar
+                        sed viverra sit pretium lorem elementum. Iaculis sit
+                        maecenas sodales mi convallis justo aliquam. Tincidunt
+                        semper ut ornare vivamus lectus.
+                    </p>
                 </div>
             </div>
             {/* right  */}
