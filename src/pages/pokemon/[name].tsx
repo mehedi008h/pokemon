@@ -1,11 +1,11 @@
 import { logo, pokemonImage, sideImage } from "@/assets";
 import { GET_POKEMON } from "@/graphql/pokemon";
-import { PokemonData, PokemonVariables } from "@/utils/types";
+import { PokemonData } from "@/utils/types";
 import { useQuery } from "@apollo/client";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { FC, Fragment } from "react";
+import React, { Fragment } from "react";
 import { AiFillHome } from "react-icons/ai";
 
 interface SingleStat {
@@ -23,10 +23,12 @@ interface PokemonType {
 const PokemonDetails = () => {
     const router = useRouter();
 
+    // fetch pokemon name from link
     const {
         query: { name },
     } = router;
 
+    // fetch data using graphql client
     const { loading, error, data } = useQuery<PokemonData>(GET_POKEMON, {
         variables: {
             name,
@@ -38,9 +40,9 @@ const PokemonDetails = () => {
 
     return (
         <div>
-            <div className="w-full h-screen flex justify-between gap-8">
+            <div className="w-full min-h-screen flex justify-between gap-8">
                 {/* left  */}
-                <div className="h-screen">
+                <div className="h-screen xl:flex lg:flex md:flex hidden">
                     <Image className="h-full" src={sideImage} alt="left" />
                 </div>
                 {/* center  */}
@@ -52,10 +54,18 @@ const PokemonDetails = () => {
                         <h2>Loading</h2>
                     ) : (
                         <Fragment>
-                            <div className="grid grid-cols-12 gap-4 mt-24">
-                                <div className="col-span-4 pr-8">
+                            <div className="grid grid-cols-12 gap-4 mt-20 p-4">
+                                {/* image  */}
+                                <div className="xl:col-span-4 lg:col-span-4 md:col-span-4 col-span-12 xl:hidden lg:hidden md:hidden block pokemon_details">
+                                    <Image
+                                        className="w-11/12 pokemon_image"
+                                        src={pokemonImage}
+                                        alt="pokemon"
+                                    />
+                                </div>
+                                <div className="xl:col-span-4 lg:col-span-4 md:col-span-4 col-span-12 xl:pr-8 lg:pr-8 md:pr-8 pr-0">
                                     <h1
-                                        className="font-medium text-4xl"
+                                        className="font-medium text-4xl xl:text-start lg:text-start md:text-start text-center"
                                         style={{ color: "#257BC4" }}
                                     >
                                         {data?.pokemon?.name} #
@@ -66,7 +76,7 @@ const PokemonDetails = () => {
                                         from the day this Pokémon is born. The
                                         seed slowly grows larger.
                                     </p>
-                                    <div className="border-4 rounded-md py-4 px-8 grid grid-cols-12 mt-12 w-4/5 round_corner">
+                                    <div className="border-4 rounded-md py-4 px-8 grid grid-cols-12 xl:mx-0 lg:mx-0 md:mx-0 mx-auto mt-12 w-4/5 round_corner">
                                         <div className="col-span-6">
                                             <div>
                                                 <h3 className="font-semibold text-base">
@@ -115,14 +125,14 @@ const PokemonDetails = () => {
                                     </div>
                                 </div>
                                 {/* image  */}
-                                <div className="col-span-4 pokemon_details">
+                                <div className="xl:col-span-4 lg:col-span-4 md:col-span-4 col-span-12 xl:block lg:block md:block hidden pokemon_details">
                                     <Image
                                         className="w-11/12 pokemon_image"
                                         src={pokemonImage}
                                         alt="pokemon"
                                     />
                                 </div>
-                                <div className="col-span-4 flex flex-col gap-6 pl-8">
+                                <div className="xl:col-span-4 lg:col-span-4 md:col-span-4 col-span-12 flex flex-col gap-6 xl:pl-8 lg:pl-8 md:pl-8 pl-0">
                                     {/* type  */}
                                     <div>
                                         <h3 className="font-medium text-lg">
@@ -170,12 +180,7 @@ const PokemonDetails = () => {
                                             >
                                                 Phychic
                                             </button>
-                                            <button
-                                                className="px-4 py-1 text-sm text-white rounded-md"
-                                                style={{
-                                                    background: "#9BCC50",
-                                                }}
-                                            >
+                                            <button className="px-4 py-1 text-sm text-white rounded-md btn_gradient">
                                                 Flying
                                             </button>
                                             <button
@@ -224,7 +229,7 @@ const PokemonDetails = () => {
                     )}
                 </div>
                 {/* right  */}
-                <div className="h-screen">
+                <div className="h-screen xl:flex lg:flex md:flex hidden">
                     <Image className="h-full" src={sideImage} alt="right" />
                 </div>
             </div>

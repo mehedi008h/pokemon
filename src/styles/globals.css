@@ -41,3 +41,7 @@ body {
 .progress_bar_animation {
     animation: 2s linear 1s running progressbarmove;
 }
+
+.btn_gradient {
+    background-image: linear-gradient(to bottom, #3dc7ef 50%, #bdbdbd 50%);
+}
