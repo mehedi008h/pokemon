@@ -7,6 +7,7 @@ import image2 from "../assets/Image02.png";
 import image3 from "../assets/Image03.png";
 import image4 from "../assets/Image04.png";
 import image5 from "../assets/Image05.png";
+import bg from "../assets/Background.png";
 
 export {
     logo,
@@ -18,4 +19,5 @@ export {
     image3,
     image4,
     image5,
+    bg,
 };

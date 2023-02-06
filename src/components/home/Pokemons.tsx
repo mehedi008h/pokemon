@@ -1,4 +1,4 @@
-import { logo } from "@/assets";
+import { bg, logo } from "@/assets";
 import { GET_POKEMONS } from "@/graphql/pokemon";
 import { useQuery } from "@apollo/client/react";
 import Image from "next/image";
@@ -36,7 +36,12 @@ const Pokemons = () => {
     console.log("Data : ", data?.pokemons?.results);
 
     return (
-        <div className="w-full xl:min-h-screen lg:min-h-screen md:min-h-screen h-fit flex pokemons_bg">
+        <div
+            className="w-full xl:min-h-screen lg:min-h-screen md:min-h-screen h-fit flex pokemons_bg"
+            style={{
+                backgroundImage: `url(${bg.src})`,
+            }}
+        >
             <div className="w-11/12 mx-auto">
                 {/* logo  */}
                 <div className="flex justify-center mt-8">
