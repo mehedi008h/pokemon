@@ -33,8 +33,6 @@ const Pokemons = () => {
         variables: gqlVariables,
     });
 
-    console.log("Data : ", data?.pokemons?.results);
-
     return (
         <div
             className="w-full xl:min-h-screen lg:min-h-screen md:min-h-screen h-fit flex pokemons_bg"

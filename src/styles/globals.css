@@ -7,6 +7,7 @@ body {
     font-family: "Ubuntu", sans-serif;
 }
 
+/* pokemon  */
 .pokemons_bg {
     background-repeat: no-repeat;
     background-size: cover;
@@ -14,8 +15,10 @@ body {
 
 .pokemon_card {
     width: 235px;
-    height: 300px;
+    min-height: 300px;
     transition: all 0.3s ease-in-out;
+    -webkit-clip-path: polygon(0% 0%, 100% 0, 100% 85%, 75% 100%, 0% 100%);
+    clip-path: polygon(0% 0%, 100% 0, 100% 85%, 75% 100%, 0% 100%);
 }
 
 .pokemon_image {
@@ -29,12 +32,13 @@ body {
     transform: scale(1.1);
 }
 
+/* progress bar animation  */
 @keyframes progressbarmove {
     from {
         width: 10%;
     }
     to {
-        width: 20rem;
+        width: 100%;
     }
 }
 
@@ -44,4 +48,51 @@ body {
 
 .btn_gradient {
     background-image: linear-gradient(to bottom, #3dc7ef 50%, #bdbdbd 50%);
+}
+
+/* gradient border  */
+.box {
+    --s: 20px; /* size of cut */
+    --b: 5px; /* border thickness */
+    --a: 180deg; /* angle of cut */
+    --p: 10px; /* the padding */
+    position: relative;
+}
+.box:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(45deg, #fc7c23, #f366b9);
+    padding: var(--b);
+    --g: #000 var(--a), #0000 0;
+    -webkit-mask: conic-gradient(
+                from calc(var(--a) / -2 + 135deg) at bottom var(--s) right
+                    var(--s),
+                var(--g)
+            )
+            100% 100%/50.1% 50.1% no-repeat content-box,
+        conic-gradient(
+                from calc(var(--a) / -2 + 135deg) at bottom var(--s) right
+                    var(--s),
+                var(--g)
+            )
+            100% 100%/50.1% 50.1% no-repeat,
+        conic-gradient(from 90deg at var(--b) var(--b), #0000 90deg, #000 0) 0 0 /
+            calc(100% - var(--b)) calc(100% - var(--b));
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+
+/* swiper button style  */
+
+.swiper-button-next,
+.swiper-button-prev {
+    background-color: #2b73b9;
+    color: white !important;
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 50%;
+    padding: 30px !important;
+    font-size: 16px !important;
 }

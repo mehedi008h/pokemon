@@ -76,7 +76,7 @@ const PokemonDetails = () => {
                                         from the day this Pokémon is born. The
                                         seed slowly grows larger.
                                     </p>
-                                    <div className="border-4 rounded-md py-4 px-8 grid grid-cols-12 xl:mx-0 lg:mx-0 md:mx-0 mx-auto mt-12 w-4/5 round_corner">
+                                    <div className="box rounded-md py-4 px-8 grid grid-cols-12 xl:mx-0 lg:mx-0 md:mx-0 mx-auto mt-12 w-4/5 round_corner">
                                         <div className="col-span-6">
                                             <div>
                                                 <h3 className="font-semibold text-base">
